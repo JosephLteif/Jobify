@@ -1,0 +1,17 @@
+body{
+  margin: 0;
+}
+
+section.topPart header.menu nav ul li a{
+  text-decoration: none;
+  color: white;
+}
+section.topPart header.menu nav ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+section.topPart header.menu nav ul li{
+  display: inline;
+}
