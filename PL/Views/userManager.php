@@ -1,5 +1,5 @@
 <?php
-include ('D:\xampp\php\www\WP1 Project\DAL\userRepo.php');
+include ('/PL/Views/userRepo.php');
 
 function SignUp ($username, $password, $email, $firstname, $lastname, $gender, $country) {
     $result=CheckUserExist($username);

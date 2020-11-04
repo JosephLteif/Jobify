@@ -1,5 +1,5 @@
 <?php
-include ('D:\xampp\php\www\WP1 Project\BLL\userManager.php');
+include ('/PL/Views/userManager.php');
 if (isset($_POST['SubmitButton'])) {
     $lastname=$_POST['lname'];
     $firstname=$_POST['fname'];
