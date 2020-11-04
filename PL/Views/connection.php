@@ -1,10 +1,10 @@
 <?php
 
 function OpenCon () {
-    $dbhost="localhost";
+    $dbhost="127.0.0.1:3306";
     $dbuser="root";
-    $dbpass="mysql";
-    $db="pwdb";
+    $dbpass="";
+    $db="jobsearchapp";
 
     $conn = new mysqli($dbhost, $dbuser, $dbpass, $db) or die("Connection failed: %s\n".$conn->error);
 
@@ -14,3 +14,4 @@ function OpenCon () {
 function CloseConn ($conn) {
     $conn->close;
 }
+?>
