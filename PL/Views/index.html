@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/PL/Styles/style.css">
+    <link rel="stylesheet" href="../Styles/style.css">
+    <link rel="stylesheet" href="../Styles/indexstyle.css">
     <title>Jobify</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="/PL/Scripts/script.js"></script>
+    <script src="../Scripts/script.js"></script>
 </head>
 
 <body>
@@ -17,26 +18,26 @@
         <ul class="navigation">
             <li> <a href="#banner" visited>Home</a></li>
             <li> <a href="#about">About</a></li>
-            <li> <a href="#news">Menu</a></li>
+            <li> <a href="#news">News</a></li>
             <li> <a href="#team">Expert</a></li>
             <li> <a href="#testimonials">Testimonials</a></li>
             <li> <a href="#contact">Contact</a></li>
         </ul>
     </header>
-    <section class="banner" id="banner" style="  background-image: url(/PL/Assets/jobBackground.jpg);">
+    <section class="banner" id="banner" style="  background-image: url(../Assets/jobBackground.jpg);">
         <div class="banner-content container center-align">
             <h2>Lead yourself to a better career
             </h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem impedit quasi enim quae,
                 voluptates aut? Iure quasi, deleniti aliquam illum odio nostrum libero, exercitationem ipsum mollitia
                 error quam esse velit!</p>
-            <a href="signup-form.html" class="btn">Get started</a>
+            <a href="SignupForm.html" class="btn">Get started</a>
         </div>
     </section>
     <!-- ------- About ---------- -->
     <section class="about" id="about">
         <div class="container D-flex">
-            <div class="col titleBx">
+            <div class="col titleBx" style="float: left;">
                 <h3><span class="big-letter">A</span>bout Us</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis mollitia quae nostrum quas numquam
                     maxime vitae, nam autem, laborum sed voluptatum quaerat architecto quos sequi amet eum laudantium at
@@ -45,16 +46,20 @@
                     provident minus voluptatum in possimus ducimus fuga! Fuga voluptates, cupiditate officia optio alias
                     hic fugit nisi ipsam explicabo omnis deleniti dolore!
                     Inventore esse velit <br><br> repellat sunt sit accusamus eaque necessitatibus maxime! nobis in
-                    eius, excepturi commodi modi ex, rem culpa qui nemo nihil explicabo et voluptates est fuga? </p>
+                    eius, excepturi commodi modi ex, rem culpa qui nemo nihil explicabo et voluptates est fuga?<br><br>
+                    <a href="#" class="Learmorelink">Learn more</a> </p>
             </div>
             <div class="col imgBx">
-                <img src="/PL/Assets/jobImage.png" alt="">
+                <img src="../Assets/jobImage.png" alt="">
             </div>
         </div>
     </section>
     <!-- ------- News ---------- -->
     <section class="news" id="news">
-        <div class="container1">
+        <div class="container D-flex">
+            <div class="col imgBx">
+                <img src="../Assets/jobImage.png" alt="">
+            </div>
             <div class="col titleBx" style="float: right;">
                 <h3><span class="big-letter">N</span>ews</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis mollitia quae nostrum quas numquam
@@ -64,10 +69,105 @@
                     provident minus voluptatum in possimus ducimus fuga! Fuga voluptates, cupiditate officia optio alias
                     hic fugit nisi ipsam explicabo omnis deleniti dolore!
                     Inventore esse velit <br><br> repellat sunt sit accusamus eaque necessitatibus maxime! nobis in
-                    eius, excepturi commodi modi ex, rem culpa qui nemo nihil explicabo et voluptates est fuga? </p>
+                    eius, excepturi commodi modi ex, rem culpa qui nemo nihil explicabo et voluptates est fuga?<br><br>
+                    <a href="#" class="Learmorelink">Learn more</a> </p>
             </div>
-            <div class="col imgBx">
-                <img src="/PL/Assets/jobImage.png" alt="">
+        </div>
+    </section>
+    <!-- ----------- experts ---------- -->
+    </section>
+    <section class="expert" id="team">
+        <div class="container">
+            <div class="titleBx center-align">
+                <h3>Our Kitchen <span class="big-letter">E</span>xperts</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="content">
+
+                <div class="box">
+                    <div class="imgBx">
+                        <img src="./FOOD Website_files/expert1.jpg" alt="">
+                    </div>
+                    <div class="text">
+                        <h3>Someone Expert</h3>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="imgBx">
+                        <img src="./FOOD Website_files/expert2.jpg" alt="">
+                    </div>
+                    <div class="text">
+                        <h3>Someone Expert</h3>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="imgBx">
+                        <img src="./FOOD Website_files/expert3.jpg" alt="">
+                    </div>
+                    <div class="text">
+                        <h3>Someone Expert</h3>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="imgBx">
+                        <img src="./FOOD Website_files/expert4.jpg" alt="">
+                    </div>
+                    <div class="text">
+                        <h3>Someone Expert</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ----------- Testimonials ---------- -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="titleBx center-align">
+                <h3 style="color: black;"><span class="big-letter">T</span>estimonials</h3>
+            </div>
+            <div class="D-flex content">
+                <div class="review-card">
+                    <div class="profile">
+                        <img src="../Assets/testimonials-1.jpg" alt="">
+                    </div>
+                    <div class="review">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit, nulla. Vel veritatis est
+                            aspernatur quisquam iste, voluptatum consequatur sapiente odit! Laborum molestiae
+                            laudantium!</p>
+                    </div>
+                    <div class="name">
+                        <h3>Someone Famouse</h3>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="profile">
+                        <img src="../Assets/testimonials-2.jpg" alt="">
+                    </div>
+                    <div class="review">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit, nulla. Vel veritatis est
+                            aspernatur quisquam iste, voluptatum consequatur sapiente odit! Laborum molestiae
+                            laudantium!</p>
+                    </div>
+                    <div class="name">
+                        <h3>Someone Famouse</h3>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="profile">
+                        <img src="../Assets/testimonials-3.jpg" alt="">
+                    </div>
+                    <div class="review">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit, nulla. Vel veritatis est
+                            aspernatur quisquam iste, voluptatum consequatur sapiente odit! Laborum molestiae
+                            laudantium!</p>
+                    </div>
+                    <div class="name">
+                        <h3>Someone Famouse</h3>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
