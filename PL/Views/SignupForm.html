@@ -3,19 +3,18 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Registration system</title>
    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
    <script src="../Scripts/script.js"></script>
+   <title>Registration Form</title>
    <!------ Include the above in your HEAD tag ---------->
-   
+
    <link rel="stylesheet" href="../Styles/registrationstyle.css">
 </head>
 
 <body>
 
-   <header>
+   <header class="sticky">
       <a href="index.html" class="logo">Jobify<span>.</span></a>
       <div class="menuToggle"></div>
       <ul class="navigation">
@@ -27,11 +26,10 @@
          <li> <a href="#contact">Contact</a></li>
       </ul>
    </header>
+
    <section class="banner" id="banner" style="  background-image: url(../Assets/jobbackground2.jpg);">
-      
-      
-      <div class="card bg-light" style="margin-top: 80;">
-         <article class="card-body mx-auto" style="max-width: 400px;">
+      <div class="card bg-light">
+         <article class="card-body mx-auto">
             <h4 class="card-title mt-3 text-center">Create Account</h4>
             <p class="text-center">Get started with your free account</p>
             <p>
@@ -39,53 +37,53 @@
                <a href="" class="btn btn-block btn-facebook"> <i class="fab fa-facebook-f"></i>   Login via facebook</a>
             </p>
             <p class="divider-text">
-                 <span class="bg-light">OR</span>
-             </p>
+               <span class="bg-light">OR</span>
+            </p>
 
 
             <form action="../Views/signup.php" method="POST">
-            <div class="form-group input-group">
-               <div class="input-group-prepend">
-                   <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-                </div>
-                 <input name="fname" class="form-control" placeholder="First name" type="text">
-             </div> <!-- form-group// -->
-             <div class="form-group input-group">
-               <div class="input-group-prepend">
-                   <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-                </div>
-                 <input name="lname" class="form-control" placeholder="Last name" type="text">
-             </div> <!-- form-group// -->
-             <div class="form-group input-group">
-               <div class="input-group-prepend">
-                  <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+               <div class="form-group input-group">
+                  <div class="input-group-prepend">
+                     <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                  </div>
+                  <input name="fname" class="form-control" placeholder="First name" type="text">
+               </div> <!-- form-group// -->
+               <div class="form-group input-group">
+                  <div class="input-group-prepend">
+                     <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                  </div>
+                  <input name="lname" class="form-control" placeholder="Last name" type="text">
+               </div> <!-- form-group// -->
+               <div class="form-group input-group">
+                  <div class="input-group-prepend">
+                     <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                  </div>
+                  <input name="email" class="form-control" placeholder="Email address" type="email">
+               </div> <!-- form-group// -->
+               <div class="form-group input-group">
+                  <div class="input-group-prepend">
+                     <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                  </div>
+                  <input name="pass" class="form-control" placeholder="Create password" type="password">
+               </div> <!-- form-group// -->
+               <div class="form-group input-group">
+                  <div class="input-group-prepend">
+                     <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                  </div>
+                  <input class="form-control" placeholder="Repeat password" type="password">
+               </div> <!-- form-group// -->
+               <div class="form-group">
+                  <button name="SubmitButton" class="btn btn-primary btn-block" type="submit">Submit</button>
+               </div> <!-- form-group// -->
+               <div style="margin-right: 50;">
+                  <p class="text-center" style="margin-left: 80;">Have an account? <a href="login.html">Log In</a> </p>
                </div>
-                <input name="email" class="form-control" placeholder="Email address" type="email">
-            </div> <!-- form-group// -->
-             <div class="form-group input-group">
-                <div class="input-group-prepend">
-                   <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-               </div>
-                 <input name="pass" class="form-control" placeholder="Create password" type="password">
-             </div> <!-- form-group// -->
-             <div class="form-group input-group">
-                <div class="input-group-prepend">
-                   <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-               </div>
-                 <input class="form-control" placeholder="Repeat password" type="password">
-             </div> <!-- form-group// -->                                      
-             <div class="form-group">
-               <button name="SubmitButton" class="btn btn-primary btn-block" type="submit">Submit</button>
-             </div> <!-- form-group// -->
-             <div style="margin-right: 50;">
-             <p class="text-center" style="margin-left: 80;">Have an account? <a href="login.html">Log In</a> </p>                                                                 
-            </div>  
             </form>
          </article>
-         </div> <!-- card.// -->
-         
-         </div> 
-         <!--container end.//-->
+      </div> <!-- card.// -->
+
+      </div>
+      <!--container end.//-->
    </section>
 </body>
 

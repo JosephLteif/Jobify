@@ -14,6 +14,9 @@
     background-repeat: no-repeat;
   }
   
+  body::-webkit-scrollbar {
+    display: none;
+}
   .container {
     max-width: 1140px;
     margin: 0 auto;
@@ -22,6 +25,10 @@
     img {
       max-width: 100%;
     }
+
+    ul{
+        margin-bottom: 0;
+      }
     
     p {
       font-weight: 300;
@@ -139,6 +146,7 @@
     padding: 10px 100px;
     background: #fff;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    height: 4em;
   }
   
   header.sticky .logo {
@@ -160,18 +168,7 @@
       align-items: center;
       position: relative;
     }
-    
-    .banner .banner-content .littleregistercontainer {
-      background-color: white;
-      width: 30vw;
-      height: 70vh;
-      border-radius: 40px;
-    }
-    
-    .banner .banner-content .littleregistercontainer form span+span {
-      margin-top: 20px;
-    }
-    
+
     .banner-content h2 {
       color: rgb(221, 216, 216);
       font-size: 5em;
@@ -359,5 +356,54 @@
     .Learmorelink:active{
       border-bottom: 2px solid #ff0157;
     }
+
+    @media (max-width: 1000px) {
+        header, header.sticky{
+            padding: 14px 70px;
+        }
+        /* ---- Responsive nav---- */
+        header .navigation {
+            display: none;
+        }
+        .menuToggle{
+            background: url(../Assets/menu.png);
+            background-repeat: no-repeat;
+            background-size: 30px;
+            background-position: center;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+        }
+        .menuToggle.active{
+            background: url(../Assets/close.png);
+            background-position: center;
+            background-size: 25px;
+            background-repeat: no-repeat;
+        }
+        header .navigation.active {
+            position: fixed;
+            top: 68px;
+            left: 0;
+            width: 100%;
+            height: calc(100% - 68px);
+            background: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        header.sticky .menuToggle {
+            filter: invert(1);
+        }
+      
+        header .navigation.active li{
+            margin: 0;
+        }
+        header .navigation.active li a {
+            color: #111;
+            font-size: 1.7em;
+            margin-top: 10px;
+        }
+      }
     
     
