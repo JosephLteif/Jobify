@@ -10,3 +10,14 @@ function SignUp ($password, $email, $firstname, $lastname) {
     }
     else return false;
 }
+
+function Login($email, $password){
+    $result = CheckAccountExist($email);
+    $row = mysqli_fetch_assoc($result);
+    if($row < 1){
+        return LoginUser($password, $email);
+    } else{
+        return false;
+    }
+}
+?>

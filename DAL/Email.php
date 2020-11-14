@@ -10,7 +10,7 @@ use PHPMailer\PHPMailer\Exception;
 function SendEmail($firstname,$email){
     //PHPMailer Object
     $mail = new PHPMailer(true); //Argument true in constructor enables exceptions
-    $mail->SMTPDebug = 4;
+    $mail->SMTPDebug = 0;
     $mail->IsSMTP();
     $mail->Host = 'smtp.gmail.com';
     $mail->Port = '80';

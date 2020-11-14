@@ -81,10 +81,9 @@ header .navigation li a:active {
 }
 
 header.sticky {
-  padding: 10px 100px;
+  padding: 20px 100px;
   background: #fff;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  height: 4em;
 }
 
 header.sticky .logo {
