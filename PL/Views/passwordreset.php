@@ -1,10 +1,10 @@
-<?php 
+<?php
 
 session_start();
 
 include('../../BLL/userManager.php');
 
-if(isset($_POST['SubmitButton'])){
+if (isset($_POST['SubmitButton'])) {
     $email = $_POST['email'];
 }
 
@@ -16,8 +16,8 @@ function Validateform($email)
     } else return true;
 }
 
-if(Validateform($email)){
-    if(passresetvalidate($email)){
+if (Validateform($email)) {
+    if (passresetvalidate($email)) {
         echo "<script language='JavaScript'>
                 window.locate.replace('new_password.html')
             </script>";
