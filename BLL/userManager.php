@@ -1,33 +1,35 @@
 <?php
-include ('../../DAL/userRepo.php');
+include('../../DAL/userRepo.php');
 
-function SignUp ($password, $email, $firstname, $lastname) {
-    $result=CheckUserExist($firstname);
-    $row=mysqli_fetch_assoc($result);
+function SignUp($password, $email, $firstname, $lastname)
+{
+    $result = CheckUserExist($firstname);
+    $row = mysqli_fetch_assoc($result);
     if ($row < 1) {
         InsertUser($password, $email, $firstname, $lastname);
         return true;
-    }
-    else return false;
+    } else return false;
 }
 
-function Login($email, $password){
+function Login($email, $password)
+{
     $result = CheckAccountExist($email);
     $row = mysqli_fetch_assoc($result);
-    if($row < 1){
+    if ($row < 1) {
         return LoginUser($password, $email);
-    } else{
+    } else {
         return false;
     }
 }
 
-function passresetvalidate($email){
+function passresetvalidate($email)
+{
     $result = CheckAccountExist($email);
     $row = mysqli_fetch_assoc($result);
-    if($row < 1){
+    if ($row < 1) {
         $token = bin2hex(random_bytes(50));
         $_SESSION['token'] = $token;
-        SendEmail(getFirstName($email),$email,2,$token);
+        SendEmail(getFirstName($email), $email, 2, $token);
         addusertoken($email, $token);
         return true;
     } else {
@@ -35,8 +37,7 @@ function passresetvalidate($email){
     }
 }
 
-function newpassword($token, $password){
-        return resetpass($token, $password);
+function newpassword($token, $password)
+{
+    return resetpass($token, $password);
 }
-
-?>

@@ -21,14 +21,17 @@ if (Validateform($password, $email)) {
     if (Login($email, $hash)) {
         echo "<script type='text/javascript'>
                 alert('Login Done!')
+                window.locate.replace('')
               </script>";
     } else {
         echo "<script language='JavaScript'>
                 alert('User not found!')
+                window.locate.replace('login.html')
               </script>";
     }
 } else {
     echo "<script language='JavaScript'>
                 alert('Please check entered values')
+                window.locate.replace('login.html')
               </script>";
 }
