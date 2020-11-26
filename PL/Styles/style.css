@@ -403,6 +403,18 @@
             font-size: 1.7em;
             margin-top: 10px;
         }
+        .about .container{
+          flex-wrap: wrap;
+        }
+        .news .container{
+              flex-wrap: wrap;
+        }
+      }
+
+      @media (max-width: 376px) {
+        .banner .container{
+          margin-top: 70px;
+        }
       }
     
     

@@ -20,8 +20,7 @@ function Validateform($password, $email)
 if (Validateform($password, $email)) {
     if (Login($email, $hash)) {
         echo "<script type='text/javascript'>
-                alert('Login Done!')
-                window.locate.replace('')
+                window.locate.replace('profilePage.html')
               </script>";
     } else {
         echo "<script language='JavaScript'>

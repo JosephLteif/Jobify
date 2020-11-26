@@ -1,7 +1,13 @@
 $(document).on("click",".menuToggle",function(){
     $(".menuToggle").toggleClass("active");
     $(".navigation").toggleClass("active");
+    $("header").toggleClass("sticky");
 });
+
+$(document).on("click",".menubtn",function(){
+    $(".menuToggle").toggleClass("active");
+    $(".navigation").toggleClass("active");
+})
 
 $(document).on("scroll",function(){
     $("header").toggleClass("sticky", window.scrollY>0);
@@ -10,6 +16,3 @@ $(document).on("scroll",function(){
 $(document).on("click",".btnlogin",function(){
     $(".btnlogin").toggleClass("new");
 })
-
-
-
