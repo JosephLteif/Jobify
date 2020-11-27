@@ -4,7 +4,6 @@ include('../../DAL/Encryption.php');
 
 if (isset($_POST['SubmitButton'])) {
     $password = $_POST['pass'];
-    $hash = encrypt($password);
     $tokentaken = $_POST['token'];
 }
 
@@ -17,7 +16,7 @@ function Validationform($password)
 }
 
 if (Validationform($password)) {
-    if (newpassword($tokentaken, $hash)) {
+    if (newpassword($tokentaken, $password)) {
         echo "<script type='text/javascript'>
         window.location.replace('login.html')
   </script>";

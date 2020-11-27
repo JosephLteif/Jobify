@@ -5,7 +5,6 @@ include('../../DAL/Encryption.php');
 if (isset($_POST['SubmitButton'])) {
     $email = $_POST['email'];
     $password = $_POST['pass'];
-    $hash = encrypt($password);
 }
 
 // make sure form is filled properly
@@ -18,10 +17,10 @@ function Validateform($password, $email)
 
 // attempt login if no errors on form
 if (Validateform($password, $email)) {
-    if (Login($email, $hash)) {
+    if (Login($email, $password)) {
         echo "<script type='text/javascript'>
-                window.locate.replace('profilePage.html')
-              </script>";
+                window.location.replace('profilePage.html')
+          </script>";
     } else {
         echo "<script language='JavaScript'>
                 alert('User not found!')

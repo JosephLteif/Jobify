@@ -7,7 +7,6 @@ if (isset($_POST['SubmitButton'])) {
     $firstname = $_POST['fname'];
     $email = $_POST['email'];
     $password = $_POST['pass'];
-    $hash = encrypt($password);
 }
 
 function ValidateSignup($password, $email, $firstname, $lastname)
@@ -22,12 +21,12 @@ function ValidateSignup($password, $email, $firstname, $lastname)
     } else return true;
 }
 
-if (!ValidateSignup($hash, $email, $firstname, $lastname)) {
+if (!ValidateSignup($password, $email, $firstname, $lastname)) {
     echo "<script type='text/javascript'>
                 alert('Please check entered values')
           </script>";
 } else {
-    $result = SignUp($hash, $email, $firstname, $lastname);
+    $result = SignUp($password, $email, $firstname, $lastname);
     if ($result) {
         echo "<script type='text/javascript'>
                 window.location.replace('login.html')

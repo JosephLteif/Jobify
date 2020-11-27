@@ -30,7 +30,7 @@ function InsertUser($password, $email, $firstname, $lastname)
     mysqli_query($conn, $sql);
 
     $sql = "INSERT INTO user (firstName, lastName, email, password)
-          VALUES ('$firstname', '$lastname', '$email', '$password')";
+          VALUES ('$firstname', '$lastname', '$email', SHA('$password'))";
 
 
     if (mysqli_query($conn, $sql)) {
@@ -48,7 +48,7 @@ function LoginUser($password, $email)
 {
     $conn = OpenCon();
 
-    $query = "SELECT * FROM user WHERE email='$email' AND password='$password' LIMIT 1";
+    $query = "SELECT * FROM user WHERE email='$email' AND password=SHA('$password') LIMIT 1";
     $results = mysqli_query($conn, $query);
 
     if (mysqli_num_rows($results) == 1) { // user found
@@ -83,7 +83,7 @@ function resetpass($token, $password)
     $conn = OpenCon();
 
     // ensure that the user exists on our system
-    $query = "UPDATE user set password = '$password' where email = (select email from password_reset where token = '$token')";
+    $query = "UPDATE user set password = SHA('$password') where email = (select email from password_reset where token = '$token')";
 
     if (mysqli_query($conn, $query)) {
         CloseConn($conn);
