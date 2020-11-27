@@ -2,10 +2,10 @@
 include('../../BLL/userManager.php');
 include('../../DAL/Encryption.php');
 
-if (isset($_POST['SubmitButton'])) {
-    $email = $_POST['email'];
-    $password = $_POST['pass'];
-}
+// if (isset($_POST['SubmitButton'])) {
+$email = $_POST['email'];
+$password = $_POST['pass'];
+// }
 
 // make sure form is filled properly
 function Validateform($password, $email)
@@ -18,9 +18,11 @@ function Validateform($password, $email)
 // attempt login if no errors on form
 if (Validateform($password, $email)) {
     if (Login($email, $password)) {
-        echo "<script type='text/javascript'>
-                window.location.replace('profilePage.html')
-          </script>";
+        session_start();
+        $_SESSION['email'] = $email;
+        // echo "<script type='text/javascript'>
+        //         window.location.replace('profilePage.html')
+        //   </script>";
     } else {
         echo "<script language='JavaScript'>
                 alert('User not found!')

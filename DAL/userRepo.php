@@ -14,7 +14,7 @@ function CheckUserExist($firstname)
 function CheckAccountExist($email)
 {
     $conn = OpenCon();
-    $sql = "SELECT * FROM user WHERE email='.$email';";
+    $sql = "SELECT * FROM user WHERE email=LOWER('$email');";
     $result = mysqli_query($conn, $sql);
     CloseConn($conn);
     return $result;
@@ -30,7 +30,7 @@ function InsertUser($password, $email, $firstname, $lastname)
     mysqli_query($conn, $sql);
 
     $sql = "INSERT INTO user (firstName, lastName, email, password)
-          VALUES ('$firstname', '$lastname', '$email', SHA('$password'))";
+          VALUES ('$firstname', '$lastname', LOWER('$email'), SHA('$password'))";
 
 
     if (mysqli_query($conn, $sql)) {
@@ -48,7 +48,7 @@ function LoginUser($password, $email)
 {
     $conn = OpenCon();
 
-    $query = "SELECT * FROM user WHERE email='$email' AND password=SHA('$password') LIMIT 1";
+    $query = "SELECT * FROM user WHERE email= LOWER('$email') AND password=SHA('$password') LIMIT 1";
     $results = mysqli_query($conn, $query);
 
     if (mysqli_num_rows($results) == 1) { // user found
@@ -67,7 +67,7 @@ function addusertoken($email, $token)
 {
     $conn = OpenCon();
 
-    $sql = "UPDATE password_reset set token = '$token' where email = '$email'";
+    $sql = "UPDATE password_reset set token = '$token' where email = LOWER('$email')";
 
     if (mysqli_query($conn, $sql)) {
         CloseConn($conn);
@@ -98,7 +98,7 @@ function getFirstName($email)
 {
     $conn = OpenCon();
 
-    $query = "SELECT firstName FROM user WHERE email='$email'";
+    $query = "SELECT firstName FROM user WHERE email=LOWER('$email')";
     $results = mysqli_query($conn, $query);
 
     if (mysqli_num_rows($results) == 1) { // user found
