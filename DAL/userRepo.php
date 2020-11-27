@@ -48,7 +48,7 @@ function LoginUser($password, $email)
 {
     $conn = OpenCon();
 
-    $query = "SELECT * FROM user WHERE email= LOWER('$email') AND password=SHA('$password') LIMIT 1";
+    $query = "SELECT * FROM user WHERE email= LOWER('$email') AND password=SHA('$password')";
     $results = mysqli_query($conn, $query);
 
     if (mysqli_num_rows($results) == 1) { // user found
@@ -82,10 +82,20 @@ function resetpass($token, $password)
 {
     $conn = OpenCon();
 
-    // ensure that the user exists on our system
-    $query = "UPDATE user set password = SHA('$password') where email = (select email from password_reset where token = '$token')";
+    $test1 = false;
+    $test2 = false;
 
-    if (mysqli_query($conn, $query)) {
+    $query = "UPDATE user set password = SHA('$password') where email = (select email from password_reset where token = '$token')";
+    if(mysqli_query($conn, $query)){
+        $test1 = true;
+    }
+
+    $query = "UPDATE password_reset set token = null where token = '$token'";
+    if(mysqli_query($conn, $query)){
+        $test2 = true;
+    }
+
+    if ($test1 && $test2) {
         CloseConn($conn);
         return true;
     } else {

@@ -1,11 +1,9 @@
 <?php
 include('../../BLL/userManager.php');
-include('../../DAL/Encryption.php');
 
-if (isset($_POST['SubmitButton'])) {
-    $password = $_POST['pass'];
-    $tokentaken = $_POST['token'];
-}
+$password = $_POST['pass'];
+$tokentaken = $_POST['token'];
+
 
 
 function Validationform($password)
@@ -17,16 +15,15 @@ function Validationform($password)
 
 if (Validationform($password)) {
     if (newpassword($tokentaken, $password)) {
-        echo "<script type='text/javascript'>
-        window.location.replace('login.html')
-  </script>";
+        echo "INNNNNNN";
+        return true;
     } else {
         echo "<script language='JavaScript'>
-        alert('An error occured')
-        window.location.replace('password_reset.html')</script>";
+        alert('An error occured')</script>";
+        return false;
     }
 } else {
     echo "<script language='JavaScript'>
-    alert('An error occured')
-    window.location.replace('password_reset.html')</script>";
+    alert('An error occured')</script>";
+    return false;
 }

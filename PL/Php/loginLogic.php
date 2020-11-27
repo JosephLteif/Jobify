@@ -20,9 +20,6 @@ if (Validateform($password, $email)) {
     if (Login($email, $password)) {
         session_start();
         $_SESSION['email'] = $email;
-        // echo "<script type='text/javascript'>
-        //         window.location.replace('profilePage.html')
-        //   </script>";
     } else {
         echo "<script language='JavaScript'>
                 alert('User not found!')
