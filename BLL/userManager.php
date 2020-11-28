@@ -3,19 +3,16 @@ include('../../DAL/userRepo.php');
 
 function SignUp($password, $email, $firstname, $lastname)
 {
-    $result = CheckUserExist($firstname);
-    $row = $result ->fetch_assoc();
-    if ($row < 1) {
+    if (!CheckAccountExist($email)) {
         InsertUser($password, $email, $firstname, $lastname);
+        SendEmail(getFirstName($email), $email, 1, null);
         return true;
     } else return false;
 }
 
 function Login($email, $password)
 {
-    $result = CheckAccountExist($email);
-    $row = $result ->fetch_assoc();
-    if ($row < 1) {
+    if (CheckAccountExist($email)) {
         return LoginUser($password, $email);
     } else {
         return false;
@@ -24,8 +21,7 @@ function Login($email, $password)
 
 function passresetvalidate($email)
 {
-    $result = CheckAccountExist($email);
-    if ($result ->fetch_assoc()) {
+    if (CheckAccountExist($email)) {
         $token = bin2hex(random_bytes(50));
         $_SESSION['token'] = $token;
         SendEmail(getFirstName($email), $email, 2, $token);

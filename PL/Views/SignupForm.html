@@ -5,10 +5,9 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-   <title>Registration Form</title>
-   <!------ Include the above in your HEAD tag ---------->
-
+   <script src="../Scripts/registrationfunct.js"></script>
    <link rel="stylesheet" href="../Styles/registrationstyle.css">
+   <title>Registration Form</title>
 </head>
 
 <body>
@@ -32,7 +31,7 @@
             </p>
 
 
-            <form action="../Php/SignUpLogic.php" method="POST">
+            <form method="POST">
                <div class="form-group input-group">
                   <div class="input-group-prepend">
                      <span class="input-group-text"> <i class="fa fa-user"></i> </span>
@@ -64,11 +63,14 @@
                   <input class="form-control" placeholder="Repeat password" type="password">
                </div> <!-- form-group// -->
                <div class="form-group">
-                  <button name="SubmitButton" class="btn btn-primary btn-block" type="submit">Submit</button>
+                  <button name="SubmitButton" class="btn btn-primary btn-block" type="submit"
+                     id="Submitbtn">Submit</button>
                </div> <!-- form-group// -->
                <div style="margin-right: 50;">
                   <p class="text-center" style="margin-left: 80;">Have an account? <a href="login.html">Log In</a> </p>
                </div>
+               <span style="color: red;" class="throw_error text-center"></span>
+               <span class="text-center" style="color: green;" id="success"></span>
             </form>
          </article>
       </div> <!-- card.// -->

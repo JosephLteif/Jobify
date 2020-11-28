@@ -17,8 +17,8 @@ function Validateform($email)
 
 if (Validateform($email)) {
     if (passresetvalidate($email)) {
-        return true;
+        echo true;
     } else {
-        return false;
+        echo false;
     }
 }

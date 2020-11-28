@@ -1,6 +1,8 @@
 $(document).ready(function () {
     $('form').submit(function (event) { //Trigger on form submit
         console.log("Form submit event started");
+        $('#name + .throw_error').empty(); //Clear the messages first
+        $('#success').empty();
 
         var postForm = {//Fetch form data
             'pass': $('input[name=pass]').val(),
@@ -21,13 +23,16 @@ $(document).ready(function () {
             success: function (data) {
 
                 if (data) {
+                    $('#success').fadeIn(1000).html("Password Reset Done!"); //If successful, than throw a success message
                         window.location.replace("../Views/login.html");
+                }else {
+                    $('.throw_error').fadeIn(1000).html("Data not received!!"); //Throw relevant error
                 }
 
                 console.log("Ajax call success");
             },
             error: function () {
-                alert("System  currently unavailable, try again later.");
+                $('.throw_error').fadeIn(1000).html("Serve error!!"); //Throw relevant error
                 console.log("Ajax call error");
             },
             complete: function () {
