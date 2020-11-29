@@ -1,8 +1,8 @@
 $(document).ready(function () {
     $('form').submit(function (event) { //Trigger on form submit
         console.log("Form submit event started");
-        $('#name + .throw_error').empty(); //Clear the messages first
-        $('#success').empty();
+        $('#name + .throw_error').html(""); //Clear the messages first
+        $('#success').html("");
 
         var postForm = {//Fetch form data
             'pass': $('input[name=pass]').val(),
@@ -24,8 +24,8 @@ $(document).ready(function () {
 
                 if (data) {
                     $('#success').fadeIn(1000).html("Password Reset Done!"); //If successful, than throw a success message
-                        window.location.replace("../Views/login.html");
-                }else {
+                    window.location.replace("../Views/login.html");
+                } else {
                     $('.throw_error').fadeIn(1000).html("Data not received!!"); //Throw relevant error
                 }
 

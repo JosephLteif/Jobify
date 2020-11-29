@@ -21,7 +21,7 @@ $(document).ready(function () {
 
                 if (data) {
                     $('#success').fadeIn(1000).html("Logged in!"); //If successful, than throw a success message
-                    window.location.replace("../Views/profilePage.php");
+                    window.location.replace("../Views/profilePage.html");
                 } else {
                     $('.throw_error').fadeIn(1000).html("Invalid Credentials"); //Throw relevant error
                 }

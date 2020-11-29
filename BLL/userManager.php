@@ -36,3 +36,7 @@ function newpassword($token, $password)
 {
     return resetpass($token, $password);
 }
+
+function GetUsers(){
+    return GetAllUsers();
+}

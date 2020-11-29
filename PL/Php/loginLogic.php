@@ -1,6 +1,5 @@
 <?php
 include('../../BLL/userManager.php');
-include('../../DAL/Encryption.php');
 
 $email = $_POST['email'];
 $password = $_POST['pass'];
@@ -18,7 +17,6 @@ if (Validateform($password, $email)) {
     if (Login($email, $password)) {
         session_start();
         $_SESSION['email'] = $email;
-        echo "HELLO!!!!!!!";
         return true;
     } else {
         return false;

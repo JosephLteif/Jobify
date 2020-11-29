@@ -1,8 +1,8 @@
 $(document).ready(function () {
     $('form').submit(function (event) { //Trigger on form submit
         console.log("Form submit event started");
-        $('#name + .throw_error').empty(); //Clear the messages first
-        $('#success').empty();
+        $('#name + .throw_error').html(""); //Clear the messages first
+        $('#success').html("");
 
         var postForm = {//Fetch form data
             'email': $('input[name=email]').val(), //Store name fields value

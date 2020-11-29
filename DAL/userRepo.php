@@ -19,7 +19,7 @@ function CheckAccountExist($email)
     $sql = "SELECT * FROM user WHERE email=LOWER('$email');";
     $result = mysqli_query($conn, $sql);
     CloseConn($conn);
-    if (mysqli_num_rows($result) > 0) {
+    if ($result) {
         return true;
     }
     return false;
@@ -112,14 +112,35 @@ function getFirstName($email)
     $conn = OpenCon();
 
     $query = "SELECT firstName FROM user WHERE email=LOWER('$email') Limit 1";
-    $results = mysqli_query($conn, $query);
+    $results = $conn->query($query);
 
-    if (mysqli_num_rows($results) > 0) { // user found
+    if ($results) { // user found
         // check if user is admin or user
         $logged_in_user = mysqli_fetch_assoc($results);
 
         CloseConn($conn);
         return $logged_in_user['firstName'];
+    } else {
+        CloseConn($conn);
+        return null;
+    }
+}
+
+function GetAllUsers()
+{
+    $conn = OpenCon();
+
+    $query = "SELECT userID, firstName, lastName, email FROM user";
+    $results = mysqli_query($conn, $query);
+    if (mysqli_num_rows($results) > 0) { // user found
+        // $arrData = array();
+        $All_Users_Data = mysqli_fetch_all($results);
+        // while ($All_Users_Data = mysqli_fetch_assoc($results)) {
+        //     array_push($arrData, json_encode($All_Users_Data));
+        // }
+        CloseConn($conn);
+        // return $arrData;
+        return json_encode($All_Users_Data);
     } else {
         CloseConn($conn);
         return null;
