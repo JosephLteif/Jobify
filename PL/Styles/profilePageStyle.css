@@ -87,7 +87,7 @@ a:not([href]):not([tabindex]) {
 
 #JobOffersPage{
 	width: 0;
-	height: 0;
+	height: 90.4px;
 	visibility: hidden;
 }
 

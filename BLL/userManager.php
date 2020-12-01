@@ -23,7 +23,6 @@ function passresetvalidate($email)
 {
     if (CheckAccountExist($email)) {
         $token = bin2hex(random_bytes(50));
-        $_SESSION['token'] = $token;
         SendEmail(getFirstName($email), $email, 2, $token);
         addusertoken($email, $token);
         return true;

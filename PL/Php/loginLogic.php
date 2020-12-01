@@ -17,10 +17,10 @@ if (Validateform($password, $email)) {
     if (Login($email, $password)) {
         session_start();
         $_SESSION['email'] = $email;
-        return true;
+        echo true;
     } else {
-        return false;
+        echo false;
     }
 } else {
-    return false;
+    echo false;
 }

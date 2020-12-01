@@ -1,15 +1,14 @@
 <?php
+if (session_id() == '' || !isset($_SESSION)) {
+    session_start();
+}
 
-        //Start session
-        session_start();
+//Check whether the session variable email is present or not
+if (!isset($_SESSION['email'])) {
+    session_destroy();
+    echo false;
+}else {
+    echo true;
+}
 
-            //Check whether the session variable SESS_MEMBER_ID is present or not
-            if (!isset($_SESSION['ID']) || (trim($_SESSION['ID']) == '')) 
-                {
-                    header("location: login.php");
-                    exit();
-                }
 
-            $session_id=$_SESSION['ID'];
-
-?>

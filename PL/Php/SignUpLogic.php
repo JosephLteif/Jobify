@@ -20,13 +20,12 @@ function ValidateSignup($password, $email, $firstname, $lastname)
 }
 
 if (!ValidateSignup($password, $email, $firstname, $lastname)) {
-    echo "HELLOOOOO";
-    echo false;
+    echo "false";
 } else {
     $result = SignUp($password, $email, $firstname, $lastname);
     if ($result) {
-        echo true;
+        echo "true";
     } else {
-        echo false;
+        echo "false";
     }
 }

@@ -19,7 +19,7 @@ function CheckAccountExist($email)
     $sql = "SELECT * FROM user WHERE email=LOWER('$email');";
     $result = mysqli_query($conn, $sql);
     CloseConn($conn);
-    if ($result) {
+    if (mysqli_num_rows($result) > 0) {
         return true;
     }
     return false;
@@ -56,8 +56,9 @@ function LoginUser($password, $email)
     $result = mysqli_query($conn, $query);
     if (mysqli_num_rows($result) > 0) { // user found
         $logged_in_user = mysqli_fetch_assoc($result);
+        echo $logged_in_user['userID'];
         $_SESSION['ID'] = $logged_in_user['userID'];
-        $_SESSION['success']  = "You are now logged in";
+        echo $_SESSION['ID'];
         CloseConn($conn);
         return true;
     } else {
@@ -133,13 +134,8 @@ function GetAllUsers()
     $query = "SELECT userID, firstName, lastName, email FROM user";
     $results = mysqli_query($conn, $query);
     if (mysqli_num_rows($results) > 0) { // user found
-        // $arrData = array();
         $All_Users_Data = mysqli_fetch_all($results);
-        // while ($All_Users_Data = mysqli_fetch_assoc($results)) {
-        //     array_push($arrData, json_encode($All_Users_Data));
-        // }
         CloseConn($conn);
-        // return $arrData;
         return json_encode($All_Users_Data);
     } else {
         CloseConn($conn);

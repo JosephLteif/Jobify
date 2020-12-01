@@ -42,4 +42,45 @@ $(document).ready(function () {
 		event.preventDefault(); //Prevent the default submit
 		console.log("Form submit event ended");
 	});
+
+	$('#fname').focusout(function(){
+		if($('input[name=fname]').val() == '' || $('input[name=fname]').val() == null){
+			$('#fname').css("border-bottom","3px solid #F90A0A");
+		} else {
+			$('#fname').css("border-bottom","3px solid #34F458");
+		}
+	})
+
+	$('#lname').focusout(function(){
+		if($('input[name=lname]').val() == '' || $('input[name=lname]').val() == null){
+			$('#lname').css("border-bottom","3px solid #F90A0A");
+		} else {
+			$('#lname').css("border-bottom","3px solid #34F458");
+		}
+	})
+
+	$('#email').focusout(function(){
+		if($('input[name=email]').val() == '' || $('input[name=email]').val() == null){
+			$('#email').css("border-bottom","3px solid #F90A0A");
+		} else {
+			$('#email').css("border-bottom","3px solid #34F458");
+		}
+	})
+
+	$('#pass').focusout(function(){
+		if($('input[name=pass]').val() == '' || $('input[name=pass]').val() == null){
+			$('#pass').css("border-bottom","3px solid #F90A0A");
+		} else {
+			$('#pass').css("border-bottom","3px solid #34F458");
+		}
+	})
+
+	$('#rpass').focusout(function(){
+		if($('input[name=rpass]').val() == '' || $('input[name=rpass]').val() == null || $('input[name=rpass]').val() !== $('input[name=pass]').val()){
+			$('#rpass').css("border-bottom","3px solid #F90A0A");
+		} else {
+			$('#rpass').css("border-bottom","3px solid #34F458");
+		}
+	})
+
 });

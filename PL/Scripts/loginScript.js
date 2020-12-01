@@ -24,8 +24,8 @@ $(document).ready(function () {
                     window.location.replace("../Views/profilePage.html");
                 } else {
                     $('.throw_error').fadeIn(1000).html("Invalid Credentials"); //Throw relevant error
+                    window.location.replace("../Views/login.html");
                 }
-                console.log(data);
                 console.log("Ajax call success");
             },
             error: function () {

@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
     $('#JobSeekerRefreshbtn').on("click", function (event) { //Trigger on form submit
         console.log("Form submit event started");
         $('#name + .throw_error').html(""); //Clear the messages first
@@ -20,8 +21,8 @@ $(document).ready(function () {
                     data = JSON.parse(data);
                     $("#JobSeekersTable tbody").html("");
                     $('#success').fadeIn(1000).html("Data Found!!"); //If successful, than throw a success message
-                    for(var i in data){
-                        $("#JobSeekersTable tbody").append("<tr><td>"+data[i][0]+"</td><td>"+data[i][1]+"</td><td>"+data[i][2]+"</td><td>"+data[i][3]+"</td></tr>")
+                    for (var i in data) {
+                        $("#JobSeekersTable tbody").append("<tr><td>" + data[i][0] + "</td><td>" + data[i][1] + "</td><td>" + data[i][2] + "</td><td>" + data[i][3] + "</td></tr>")
                     }
                 }
 
@@ -64,8 +65,8 @@ $(document).ready(function () {
                     data = JSON.parse(data);
                     $("#JobOffersTable tbody").html("");
                     $('#success').fadeIn(1000).html("Data Found!!"); //If successful, than throw a success message
-                    for(var i in data){
-                        $("#JobOffersTable tbody").append("<tr><td>"+data[i][0]+"</td><td>"+data[i][1]+"</td><td>"+data[i][2]+"</td><td>"+data[i][3]+"</td></tr>")
+                    for (var i in data) {
+                        $("#JobOffersTable tbody").append("<tr><td>" + data[i][0] + "</td><td>" + data[i][1] + "</td><td>" + data[i][2] + "</td><td>" + data[i][3] + "</td></tr>")
                     }
                 }
 
@@ -131,3 +132,32 @@ $(document).ready(function () {
     });
 
 });
+
+
+$(document).ready(function () {
+    console.log("Form submit event started");
+
+    $.ajax({//Process the form using $.ajax()
+        type: 'POST', //Method type
+        url: '../Php/CheckSessionLogic.php', //Your form processing file url
+        beforeSend: function (xhr) {
+            console.log("Ajax call initiated");
+        },
+        success: function (data) {
+            if (!data) { //If fails
+                window.location.replace("../Views/login.html");
+            }
+
+            console.log("Ajax call success");
+        },
+        error: function () {
+            alert("System  currently unavailable, try again later.");
+            console.log("Ajax call error");
+        },
+        complete: function () {
+            console.log("Ajax call completed");
+        }
+
+    });
+    console.log("Form submit event ended");
+})
