@@ -142,3 +142,19 @@ function GetAllUsers()
         return null;
     }
 }
+
+function GetAllJobs()
+{
+    $conn = OpenCon();
+
+    $query = "SELECT jobOffer_ID, ID_COMPANY, JOBDESCRIPTION, CREATION_DATE FROM job_offer;";
+    $results = mysqli_query($conn, $query);
+    if (mysqli_num_rows($results) > 0) { // user found
+        $All_Jobs_Data = mysqli_fetch_all($results);
+        CloseConn($conn);
+        return json_encode($All_Jobs_Data);
+    } else {
+        CloseConn($conn);
+        return null;
+    }
+}

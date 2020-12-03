@@ -43,7 +43,6 @@ a:not([href]):not([tabindex]) {
   color: white;
   padding: 16px;
   text-decoration: none;
-  color: currentColor;
 }
 
 
@@ -65,6 +64,7 @@ a:not([href]):not([tabindex]) {
 .sidebar a:hover:not(.active) {
   background-color: #5f8aff;
   color: white;
+  cursor: pointer;
 }
 
 #side{
@@ -87,7 +87,7 @@ a:not([href]):not([tabindex]) {
 
 #JobOffersPage{
 	width: 0;
-	height: 90.4px;
+	height: 0;
 	visibility: hidden;
 }
 
@@ -97,9 +97,19 @@ a:not([href]):not([tabindex]) {
 	float: right;
 }
 
+.table tbody tr:hover{
+  background-color: #f2f2f2;
+  cursor: pointer;
+}
+
 /* On screens that are less than 700px wide, make the sidebar into a topbar */
 @media screen and (max-width: 700px) {
   .sidebar {
+    width: 0;
+    height: 0;
+    position: relative;
+  }
+  #hidebtn{
     width: 0;
     height: 0;
     position: relative;

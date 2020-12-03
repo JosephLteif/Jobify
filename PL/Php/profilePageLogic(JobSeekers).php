@@ -1,4 +1,8 @@
 <?php
 include('../../BLL/userManager.php');
 
-echo GetUsers();
+if ($_POST['test'] == 'Seeker') {
+    echo GetUsers();
+} else if ($_POST['test'] == 'Job') {
+    echo GetJobs();
+}

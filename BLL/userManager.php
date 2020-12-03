@@ -39,3 +39,7 @@ function newpassword($token, $password)
 function GetUsers(){
     return GetAllUsers();
 }
+
+function GetJobs(){
+    return GetAllJobs();
+}

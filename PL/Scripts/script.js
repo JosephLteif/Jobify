@@ -27,9 +27,7 @@ $(document).ready(function () {
                 console.log("Ajax call initiated");
             },
             success: function (data) {
-                console.log(data);
                 if (!data) { //If fails
-                    console.log("LOLLL");
                     window.location.replace("../Views/login.html");
                 } else {
                     window.location.replace("../Views/profilePage.html");
