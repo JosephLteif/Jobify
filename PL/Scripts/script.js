@@ -48,3 +48,15 @@ $(document).ready(function () {
         console.log("Form submit event ended");
     })
 })
+
+$(document).ready(function(){
+    if (localStorage.getItem('cookieSeen') != 'shown') {
+        $('.cookie-banner').css("visibility","visible");
+        localStorage.setItem('cookieSeen','shown');
+      };
+      $('.close').on("click",function() {
+        $('.cookie-banner').css("visibility","hidden");
+
+      })
+})
+
