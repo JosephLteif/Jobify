@@ -4,8 +4,8 @@ if (session_id() == '' || !isset($_SESSION)) {
 }
 
 //Check whether the session variable email is present or not
-if (!isset($_SESSION['email'])) {
-    session_destroy();
+if (!isset($_SESSION['username'])) {
+    // session_destroy();
     echo false;
 }else {
     echo true;

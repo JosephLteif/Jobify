@@ -5,7 +5,7 @@ $(document).ready(function () {
         $('#success').html("");
 
         var postForm = {//Fetch form data
-            'email': $('input[name=email]').val(), //Store name fields value
+            'username': $('input[name=username]').val(), //Store name fields value
             'pass': $('input[name=pass]').val()
         };
 

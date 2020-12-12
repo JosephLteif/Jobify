@@ -10,10 +10,10 @@ function SignUp($password, $email, $firstname, $lastname)
     } else return false;
 }
 
-function Login($email, $password)
+function Login($username, $password)
 {
-    if (CheckAccountExist($email)) {
-        return LoginUser($password, $email);
+    if (CheckAdminExist($username)) {
+        return LoginAdmin($password, $username);
     } else {
         return false;
     }

@@ -192,7 +192,12 @@ $(document).ready(function () {
 
   $("tbody").delegate("tr","click",function(){
     var ID = $(this).children("td")[0].childNodes[0].data;
-    console.log(ID);
+
+    $("tbody").children().each(function(){
+      if ($(this).hasClass("tractive"))
+      $(this).removeClass("tractive");
+    })
+    $(this).addClass("tractive");
     // window.location.replace("../Views/login.html?ID="+ID);
   });
 

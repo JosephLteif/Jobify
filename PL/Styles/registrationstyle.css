@@ -126,18 +126,16 @@ header.sticky .navigation li a {
   z-index: 1;
 }
 
-.btn-facebook {
+.btn-facebook, .btn-facebook:hover {
   background-color: #405D9D;
   color: #fff;
   transition: padding 0.3s;
 }
 
-.btn-facebook:hover {
-  padding: 5px;
-}
-.btn-twitter {
+.btn-twitter, .btn-twitter:hover {
   background-color: #42AEEC;
   color: #fff;
+  transition: padding 0.3s;
 }
 /* xxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 

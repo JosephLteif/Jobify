@@ -97,6 +97,10 @@ a:not([href]):not([tabindex]) {
 	float: right;
 }
 
+.tractive{
+  background-color: #f2f2f2;
+}
+
 .table tbody tr:hover{
   background-color: #f2f2f2;
   cursor: pointer;

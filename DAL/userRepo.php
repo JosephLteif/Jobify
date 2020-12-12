@@ -25,6 +25,18 @@ function CheckAccountExist($email)
     return false;
 }
 
+function CheckAdminExist($username)
+{
+    $conn = OpenCon();
+    $sql = "SELECT * FROM admin WHERE Username=LOWER('$username');";
+    $result = mysqli_query($conn, $sql);
+    CloseConn($conn);
+    if (mysqli_num_rows($result) > 0) {
+        return true;
+    }
+    return false;
+}
+
 function InsertUser($password, $email, $firstname, $lastname)
 {
     $conn = OpenCon();
@@ -48,17 +60,15 @@ function InsertUser($password, $email, $firstname, $lastname)
     }
 }
 
-function LoginUser($password, $email)
+function LoginAdmin($password, $username)
 {
     $conn = OpenCon();
 
-    $query = "SELECT * FROM user WHERE email= LOWER('$email') AND password = (select SHA('$password')) Limit 1";
+    $query = "SELECT * FROM admin WHERE Username= LOWER('$username') AND HashedPassword = (select SHA('$password')) Limit 1";
     $result = mysqli_query($conn, $query);
     if (mysqli_num_rows($result) > 0) { // user found
         $logged_in_user = mysqli_fetch_assoc($result);
-        echo $logged_in_user['userID'];
-        $_SESSION['ID'] = $logged_in_user['userID'];
-        echo $_SESSION['ID'];
+        $_SESSION['Username'] = $logged_in_user['Username'];
         CloseConn($conn);
         return true;
     } else {
