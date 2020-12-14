@@ -42,27 +42,37 @@
       <span style="color: red;" class="throw_error text-center"></span>
       <span class="text-center" style="color: green;" id="success"></span>
       <img class="refreshbtn" id="JobSeekerRefreshbtn" src="../Assets/icons8-refresh.gif">
-
-      <!-- <table class="table" id="JobSeekersTable">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">ID</th>
-            <th scope="col">FirstName</th>
-            <th scope="col">LastName</th>
-            <th scope="col">Email</th>
-          </tr>
-        </thead>
-        <tbody>
-
-        </tbody>
-      </table> -->
       <div id="peoplelist">
 
         <div id="rowbar" class="row">
 
-
-
         </div>
+      </div>
+      <!-- The Modal -->
+      <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div style="display: flex;">
+            <img style="height: 100%; width: 50%;"
+              src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
+              alt="">
+            <div id="userInfo" style="margin: 6%; width: 50%; height: 100%; float: right;">
+              <p id="ID" style="padding-bottom: 10px;"></p>
+              <p id="Fullname"></p>
+              <p id="EmailAddress"></p>
+              <p id="Followers"></p>
+              <p id="Followings"></p>
+              <div class="button mt-2 d-flex  align-items-center" style="margin-right: 5%;">
+                <button id="Editbtn" class="btn btn-sm btn-outline-primary w-100">Update Info</button> 
+                <button id="deletebtnInView" class="btn btn-sm btn-primary w-100 ml-2">Delete User</button> 
+              </div>
+            </div>
+
+          </div>
+        </div>
+
       </div>
     </div>
 

@@ -40,16 +40,16 @@ $(document).ready(function () {
               '                       <h4 class="mb-0 mt-0">' + data[i][1] + ' ' + data[i][2] + '</h4> <span>' + data[i][3] + '</span>  ' +
               '                       <div class="p-2 mt-2 bg-primary d-flex justify-content-between rounded text-white stats">  ' +
               '                         <div class="d-flex flex-column"> <span class="articles">ID</span> <span  ' +
-              '                             class="number1">'+ data[i][0] +'</span> </div>  ' +
+              '                             class="number1">' + data[i][0] + '</span> </div>  ' +
               '                         <div class="d-flex flex-column"> <span class="followers">Followers</span> <span  ' +
-              '                             class="number2">'+ data[i][4] +'</span> </div>  ' +
+              '                             class="number2">' + data[i][4] + '</span> </div>  ' +
               '                         <div class="d-flex flex-column"> <span class="rating">Following</span> <span  ' +
-              '                             class="number3">'+ data[i][5] +'</span>  ' +
+              '                             class="number3">' + data[i][5] + '</span>  ' +
               '                         </div>  ' +
               '                       </div>  ' +
               '                       <div class="button mt-2 d-flex flex-row align-items-center"> <button  ' +
-              '                           class="btn btn-sm btn-outline-primary w-100">View</button> <button  ' +
-              '                           class="btn btn-sm btn-primary w-100 ml-2">Follow</button> </div>  ' +
+              '                           id="Viewbtn" class="btn btn-sm btn-outline-primary w-100">View</button> <button id="deletebtn"  ' +
+              '                           class="btn btn-sm btn-primary w-100 ml-2">Delete</button> </div>  ' +
               '                     </div>  ' +
               '                   </div>  ' +
               '                 </div>  ' +
@@ -75,8 +75,69 @@ $(document).ready(function () {
     console.log("Form submit event ended");
   });
 
+  $(document).on("click", '#Viewbtn', function () {
+    $(".modal").css("visibility","visible");
 
-  $('#JobRefreshbtn').on("click", function (event) { //Trigger on form submit
+    console.log("Form submit event started");
+    $('#name + .throw_error').html(""); //Clear the messages first
+    $('#success').html("");
+
+    var postForm = {//Fetch form data
+      'value': $(this)[0].parentElement.parentElement.children[2].children[0].children[1].childNodes[0].nodeValue
+    };
+
+    $.ajax({//Process the form using $.ajax()
+      type: 'POST', //Method type
+      url: '../Php/profilePageLogic(JobSeekers).php', //Your form processing file url
+      data: postForm,
+      beforeSend: function (xhr) {
+        $("#Viewbtn").attr("disabled", "disabled");
+        console.log("Ajax call initiated");
+      },
+      success: function (data) {
+
+        if (!data) { //If fails
+          $('.throw_error').fadeIn(1000).html("No Data Found!"); //Throw relevant error
+        } else {
+          data = JSON.parse(data);
+          for (var i in data) {
+            $("#ID").html("ID: "+data[i][0]);
+            $("#Fullname").html("FullName: "+data[i][1] + ' ' + data[i][2]);
+            $("#EmailAddress").html("Email Address: "+data[i][3]);
+            $("#Followers").html("Followers: "+data[i][4]);
+            $("#Followings").html("Followings: "+data[i][5]);
+          }
+        }
+
+        console.log("Ajax call success");
+      },
+      error: function () {
+        alert("System  currently unavailable, try again later.");
+        console.log("Ajax call error");
+      },
+      complete: function () {
+        $("#Viewbtn").removeAttr("disabled");
+        console.log("Ajax call completed");
+      }
+
+    });
+    event.preventDefault(); //Prevent the default submit
+    console.log("Form submit event ended");
+  });
+
+
+
+  $(".close").on("click", function(){
+    $(".modal").css("visibility","hidden");
+  })
+
+  $(document).on("click",function(event) {
+    if (event.target == $(".modal")) {
+      $(".modal").css("visibility","hidden");
+    }
+  });
+
+  $('#JobRefreshbtn').on("click", function (event) {
     console.log("Form submit event started");
     $('#name + .throw_error').html(""); //Clear the messages first
     $('#success').html("");

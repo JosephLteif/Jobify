@@ -43,3 +43,7 @@ function GetUsers(){
 function GetJobs(){
     return GetAllJobs();
 }
+
+function GetUserByID($ID){
+    return GetUserByIDRepo($ID);
+}
