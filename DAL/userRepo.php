@@ -169,6 +169,29 @@ function GetUserByIDRepo($ID)
     }
 }
 
+function DeleteUserByIDRepo($ID)
+{
+    $conn = OpenCon();
+
+    $query = "delete from password_reset where email = (select email from user where userID = '$ID');";
+    if(mysqli_query($conn, $query)){
+        echo "step 1";
+    }
+
+    $query = "delete from user_follow_user where user_userID = '$ID' or user_userID1 = '$ID'";
+    if(mysqli_query($conn, $query)){
+        echo "step 2";
+    }
+
+    $query = "Delete FROM user where userID = '$ID';";
+    if (mysqli_query($conn, $query)) { // user found
+        return true;
+    } else {
+        CloseConn($conn);
+        return false;
+    }
+}
+
 function GetAllJobs()
 {
     $conn = OpenCon();

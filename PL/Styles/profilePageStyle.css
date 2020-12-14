@@ -1,26 +1,26 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  html {
-    scroll-behavior: smooth;
-  }
-  
-  body {
-    font-family: 'Poppins', sans-serif;
-    font-size: 12x;
-    background-repeat: no-repeat;
-  }
-  
-  body::-webkit-scrollbar {
-    display: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 12x;
+  background-repeat: no-repeat;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 a:not([href]):not([tabindex]) {
-	color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 
 /* The side navigation menu */
@@ -45,13 +45,12 @@ a:not([href]):not([tabindex]) {
   text-decoration: none;
 }
 
-
 /* Sidebar image */
-.sidebar img{
-	border-radius: 50px;
-	max-width: 100px;
-	padding-top: 10px;
-	padding-bottom: 10px;
+.sidebar img {
+  border-radius: 50px;
+  max-width: 100px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 /* Active/current link */
@@ -67,43 +66,43 @@ a:not([href]):not([tabindex]) {
   cursor: pointer;
 }
 
-#side{
-	transition: 0.5s;
-	margin-left: 250px;
+#side {
+  transition: 0.5s;
+  margin-left: 250px;
 }
 
-#side #hidebtn{
-	transition: 0.5s;
-	-webkit-transform: rotate(180deg);
-    -moz-transform: rotate(180deg);
-    transform: rotate(180deg);
+#side #hidebtn {
+  transition: 0.5s;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
-#JobSeekersPage{
-	width: 0;
-	height: 0;
-	visibility: hidden;
+#JobSeekersPage {
+  width: 0;
+  height: 0;
+  visibility: hidden;
 }
 
-#JobOffersPage{
-	width: 0;
-	height: 0;
-	visibility: hidden;
+#JobOffersPage {
+  width: 0;
+  height: 0;
+  visibility: hidden;
 }
 
-.refreshbtn{
-	background-color: transparent;
-	width: 40px;
+.refreshbtn {
+  background-color: transparent;
+  width: 40px;
   position: absolute;
   top: 8px;
   right: 0;
 }
 
-.tractive{
+.tractive {
   background-color: #f2f2f2;
 }
 
-.table tbody tr:hover{
+.table tbody tr:hover {
   background-color: #f2f2f2;
   cursor: pointer;
 }
@@ -111,45 +110,44 @@ a:not([href]):not([tabindex]) {
 .card {
   width: 400px;
   border-radius: 15px;
-  background-color: #fff
+  background-color: #fff;
 }
 
 .stats {
   background: #f2f5f8 !important;
-  color: #000 !important
+  color: #000 !important;
 }
 
 .articles {
   font-size: 10px;
-  color: #a1aab9
+  color: #a1aab9;
 }
 
 .number1 {
-  font-weight: 500
+  font-weight: 500;
 }
 
 .followers {
   font-size: 10px;
-  color: #a1aab9
+  color: #a1aab9;
 }
 
 .number2 {
-  font-weight: 500
+  font-weight: 500;
 }
 
 .rating {
   font-size: 10px;
-  color: #a1aab9
+  color: #a1aab9;
 }
 
 .number3 {
-  font-weight: 500
+  font-weight: 500;
 }
-
 
 /* The Modal (background) */
 .modal {
-  visibility: hidden;/* Hidden by default */
+  visibility: hidden; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   padding-top: 100px; /* Location of the box */
@@ -158,9 +156,9 @@ a:not([href]):not([tabindex]) {
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  display: block  !important;
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  display: block !important;
 }
 
 /* Modal Content */
@@ -171,10 +169,9 @@ a:not([href]):not([tabindex]) {
   width: 80%;
 }
 
-#userInfo p+p{
+#userInfo p + p {
   padding-bottom: 10px;
 }
-
 
 /* The Close Button */
 .close {
@@ -194,6 +191,43 @@ a:not([href]):not([tabindex]) {
   cursor: pointer;
 }
 
+.viewPanel {
+  display: flex;
+  min-width: 800px;
+}
+
+#userImg {
+  height: 100%;
+  width: 50%;
+}
+
+@media screen and (max-width: 1300px) {
+  .col-4 {
+    display: contents !important;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .viewPanel {
+    display: contents;
+    width: 50%;
+  }
+  .modal-content {
+    min-width: 269px;
+  }
+  #userImg {
+    height: 100%;
+    width: 100%;
+    min-width: 269px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .close {
+    margin-left: 95%;
+  }
+}
+
 /* On screens that are less than 700px wide, make the sidebar into a topbar */
 @media screen and (max-width: 700px) {
   .sidebar {
@@ -201,17 +235,21 @@ a:not([href]):not([tabindex]) {
     height: 0;
     position: relative;
   }
-  #hidebtn{
+  #hidebtn {
     width: 0;
     height: 0;
     position: relative;
   }
-  .sidebar a {float: left;}
-  div.content {margin-left: 0;}
-  #side{
-	transition: 0.5s;
-	margin-left: 0px;
-}
+  .sidebar a {
+    float: left;
+  }
+  div.content {
+    margin-left: 0;
+  }
+  #side {
+    transition: 0.5s;
+    margin-left: 0px;
+  }
 }
 
 /* On screens that are less than 400px, display the bar vertically, instead of horizontally */

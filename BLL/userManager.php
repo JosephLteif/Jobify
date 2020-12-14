@@ -47,3 +47,7 @@ function GetJobs(){
 function GetUserByID($ID){
     return GetUserByIDRepo($ID);
 }
+
+function DeleteUserByID($ID){
+    return DeleteUserByIDRepo($ID);
+}
