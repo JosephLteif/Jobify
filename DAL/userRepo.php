@@ -141,7 +141,7 @@ function GetAllUsers()
 {
     $conn = OpenCon();
 
-    $query = "SELECT userID, firstName, lastName, email FROM user";
+    $query = "SELECT userID, firstName, lastName, email, (select count(user_userID) from user_follow_user where user_userID = userID), (select count(user_userID1) from user_follow_user where user_userID1 = userID)  FROM user;";
     $results = mysqli_query($conn, $query);
     if (mysqli_num_rows($results) > 0) { // user found
         $All_Users_Data = mysqli_fetch_all($results);

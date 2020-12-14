@@ -26,10 +26,35 @@ $(document).ready(function () {
           $('.throw_error').fadeIn(1000).html("No Data Found!"); //Throw relevant error
         } else {
           data = JSON.parse(data);
-          $("#JobSeekersTable tbody").html("");
+          $("#rowbar").html("");
           $('#success').fadeIn(1000).html("Data Found!!"); //If successful, than throw a success message
           for (var i in data) {
-            $("#JobSeekersTable tbody").append("<tr><td>" + data[i][0] + "</td><td>" + data[i][1] + "</td><td>" + data[i][2] + "</td><td>" + data[i][3] + "</td></tr>")
+            $("#rowbar").append('             <div class="col-4">  ' +
+              '               <div class="container mt-5">  ' +
+              '                 <div class="card p-3">  ' +
+              '                   <div class="d-flex align-items-center">  ' +
+              '                     <div class="image"> <img  ' +
+              '                         src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"  ' +
+              '                         class="rounded" width="155"> </div>  ' +
+              '                     <div class="ml-3 w-100">  ' +
+              '                       <h4 class="mb-0 mt-0">' + data[i][1] + ' ' + data[i][2] + '</h4> <span>' + data[i][3] + '</span>  ' +
+              '                       <div class="p-2 mt-2 bg-primary d-flex justify-content-between rounded text-white stats">  ' +
+              '                         <div class="d-flex flex-column"> <span class="articles">ID</span> <span  ' +
+              '                             class="number1">'+ data[i][0] +'</span> </div>  ' +
+              '                         <div class="d-flex flex-column"> <span class="followers">Followers</span> <span  ' +
+              '                             class="number2">'+ data[i][4] +'</span> </div>  ' +
+              '                         <div class="d-flex flex-column"> <span class="rating">Following</span> <span  ' +
+              '                             class="number3">'+ data[i][5] +'</span>  ' +
+              '                         </div>  ' +
+              '                       </div>  ' +
+              '                       <div class="button mt-2 d-flex flex-row align-items-center"> <button  ' +
+              '                           class="btn btn-sm btn-outline-primary w-100">View</button> <button  ' +
+              '                           class="btn btn-sm btn-primary w-100 ml-2">Follow</button> </div>  ' +
+              '                     </div>  ' +
+              '                   </div>  ' +
+              '                 </div>  ' +
+              '               </div>  ' +
+              '            </div>  ')
           }
         }
 
@@ -130,9 +155,9 @@ $(document).ready(function () {
     $("#HomePage").css({ "width": "100%", "height": "100%", "visibility": "visible" });
     $("#JobSeekersPage").css({ "width": "0", "height": "0", "visibility": "hidden" });
     $("#JobOffersPage").css({ "width": "0", "height": "0", "visibility": "hidden" });
-    $(".sidebar a").each(function(){
+    $(".sidebar a").each(function () {
       if ($(this).hasClass("active"))
-      $(this).removeClass("active");
+        $(this).removeClass("active");
     })
     $("#Homebtn").addClass("active");
   });
@@ -141,9 +166,9 @@ $(document).ready(function () {
     $("#HomePage").css({ "width": "0", "height": "0", "visibility": "hidden" });
     $("#JobSeekersPage").css({ "width": "100%", "height": "100%", "visibility": "visible" });
     $("#JobOffersPage").css({ "width": "0", "height": "0", "visibility": "hidden" });
-    $(".sidebar a").each(function(){
+    $(".sidebar a").each(function () {
       if ($(this).hasClass("active"))
-      $(this).removeClass("active");
+        $(this).removeClass("active");
     })
     $("#JobSeekersbtn").addClass("active");
   });
@@ -152,9 +177,9 @@ $(document).ready(function () {
     $("#HomePage").css({ "width": "0", "height": "0", "visibility": "hidden" });
     $("#JobSeekersPage").css({ "width": "0", "height": "0", "visibility": "hidden" });
     $("#JobOffersPage").css({ "width": "100%", "height": "100%", "visibility": "visible" });
-    $(".sidebar a").each(function(){
+    $(".sidebar a").each(function () {
       if ($(this).hasClass("active"))
-      $(this).removeClass("active");
+        $(this).removeClass("active");
     })
     $("#JobOffersbtn").addClass("active");
   });
@@ -190,12 +215,12 @@ $(document).ready(function () {
   console.log("Form submit event ended");
 
 
-  $("tbody").delegate("tr","click",function(){
+  $("tbody").delegate("tr", "click", function () {
     var ID = $(this).children("td")[0].childNodes[0].data;
 
-    $("tbody").children().each(function(){
+    $("tbody").children().each(function () {
       if ($(this).hasClass("tractive"))
-      $(this).removeClass("tractive");
+        $(this).removeClass("tractive");
     })
     $(this).addClass("tractive");
     // window.location.replace("../Views/login.html?ID="+ID);
@@ -208,9 +233,9 @@ $("#JobOffersbtn").on("click", function () {
   $("#HomePage").css({ "width": "0", "height": "0", "visibility": "hidden" });
   $("#JobSeekersPage").css({ "width": "0", "height": "0", "visibility": "hidden" });
   $("#JobOffersPage").css({ "width": "100%", "height": "100%", "visibility": "visible" });
-  $(".sidebar a").each(function(){
+  $(".sidebar a").each(function () {
     if ($(this).hasClass("active"))
-    $(this).removeClass("active");
+      $(this).removeClass("active");
   })
   $("#JobOffersbtn").addClass("active");
 });

@@ -6,6 +6,7 @@
   <meta http-equiv="Cache-control" content="no-cache">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <link rel="stylesheet" href="../Styles/profilePageStyle.css">
   <script src="../Scripts/profilePageScript.js"></script>
@@ -13,6 +14,7 @@
 </head>
 
 <body>
+
   <!-- The sidebar -->
   <div class="sidebar">
     <img src="../Assets/expert2.jpg" alt="../Assets/default-PP.jpg" style="margin-left: 40px;">
@@ -21,6 +23,8 @@
     <a id="JobOffersbtn">Job Offers</a>
     <a href="../Php/DestroySessionLogic.php" id="Logoutbtn">Logout</a>
   </div>
+  <!--  -->
+
   <div id="side">
     <img id="hidebtn" src="../Assets/icons8-arrow-64.png" alt=""
       style="position: absolute; width: 24px; margin-left: -40px;">
@@ -38,7 +42,8 @@
       <span style="color: red;" class="throw_error text-center"></span>
       <span class="text-center" style="color: green;" id="success"></span>
       <img class="refreshbtn" id="JobSeekerRefreshbtn" src="../Assets/icons8-refresh.gif">
-      <table class="table" id="JobSeekersTable">
+
+      <!-- <table class="table" id="JobSeekersTable">
         <thead class="thead-dark">
           <tr>
             <th scope="col">ID</th>
@@ -50,8 +55,17 @@
         <tbody>
 
         </tbody>
-      </table>
+      </table> -->
+      <div id="peoplelist">
+
+        <div id="rowbar" class="row">
+
+
+
+        </div>
+      </div>
     </div>
+
     <div id="JobOffersPage">
       <span style="color: red;" class="throw_error text-center"></span>
       <span class="text-center" style="color: green;" id="success"></span>
