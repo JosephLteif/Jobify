@@ -174,14 +174,10 @@ function DeleteUserByIDRepo($ID)
     $conn = OpenCon();
 
     $query = "delete from password_reset where email = (select email from user where userID = '$ID');";
-    if(mysqli_query($conn, $query)){
-        echo "step 1";
-    }
+    mysqli_query($conn, $query);
 
     $query = "delete from user_follow_user where user_userID = '$ID' or user_userID1 = '$ID'";
-    if(mysqli_query($conn, $query)){
-        echo "step 2";
-    }
+    mysqli_query($conn, $query);
 
     $query = "Delete FROM user where userID = '$ID';";
     if (mysqli_query($conn, $query)) { // user found
@@ -189,21 +185,5 @@ function DeleteUserByIDRepo($ID)
     } else {
         CloseConn($conn);
         return false;
-    }
-}
-
-function GetAllJobs()
-{
-    $conn = OpenCon();
-
-    $query = "SELECT jobOffer_ID, ID_COMPANY, JOBDESCRIPTION, CREATION_DATE FROM job_offer;";
-    $results = mysqli_query($conn, $query);
-    if (mysqli_num_rows($results) > 0) { // user found
-        $All_Jobs_Data = mysqli_fetch_all($results);
-        CloseConn($conn);
-        return json_encode($All_Jobs_Data);
-    } else {
-        CloseConn($conn);
-        return null;
     }
 }

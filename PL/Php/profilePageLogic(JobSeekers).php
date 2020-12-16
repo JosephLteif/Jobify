@@ -3,10 +3,14 @@ include('../../BLL/userManager.php');
 
 if (isset($_POST['value'])) {
     $value = $_POST['value'];
-    if ($_POST['test'] == 'View') { 
+    if ($_POST['test'] == 'View') {
         echo GetUserByID($value);
     } else if ($_POST['test'] == 'Delete') {
         echo DeleteUserByID($value);
+    } else if($_POST['test'] == 'View2'){
+        echo GetJobByID($value);
+    }else if($_POST['test'] == 'Delete2'){
+        echo DeleteJobByID($value);
     }
 }
 

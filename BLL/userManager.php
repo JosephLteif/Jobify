@@ -1,5 +1,6 @@
 <?php
 include('../../DAL/userRepo.php');
+include('../../DAL/jobRepo.php');
 
 function SignUp($password, $email, $firstname, $lastname)
 {
@@ -40,14 +41,27 @@ function GetUsers(){
     return GetAllUsers();
 }
 
-function GetJobs(){
-    return GetAllJobs();
-}
-
 function GetUserByID($ID){
     return GetUserByIDRepo($ID);
 }
 
 function DeleteUserByID($ID){
     return DeleteUserByIDRepo($ID);
+}
+
+function GetJobs(){
+    return GetAllJobs();
+}
+
+function GetJobByID($ID){
+    return GetJobByIDRepo($ID);
+}
+
+function DeleteJobByID($ID){
+    return DeleteJobByIDRepo($ID);
+}
+
+function VerifyEmail($email)
+{
+    return CheckAccountExist($email);
 }

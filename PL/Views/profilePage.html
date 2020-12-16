@@ -57,7 +57,7 @@
             <img id="userImg"
               src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
               alt="">
-            <div id="userInfo" style="margin: 6%; width: 50%; height: 100%; float: right;">
+            <div id="userInfo" >
               <p id="ID" style="padding-bottom: 10px;"></p>
               <p id="Fullname"></p>
               <p id="EmailAddress"></p>
@@ -79,19 +79,35 @@
       <span style="color: red;" class="throw_error text-center"></span>
       <span class="text-center" style="color: green;" id="success"></span>
       <img class="refreshbtn" id="JobRefreshbtn" src="../Assets/icons8-refresh.gif">
-      <table class="table" id="JobOffersTable">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">ID</th>
-            <th scope="col">ID Company</th>
-            <th scope="col">Description</th>
-            <th scope="col">Creation Date</th>
-          </tr>
-        </thead>
-        <tbody>
+      <div id="joblist">
 
-        </tbody>
-      </table>
+        <div id="rowbar2" class="row">
+
+        </div>
+      </div>
+      <!-- The Modal -->
+      <div id="myModal1" class="modal1">
+        <!-- Modal content -->
+        <div class="modal-content1">
+          <span class="close1">&times;</span>
+          <div class="viewPanel2">
+            <div id="userInfo" >
+              <p id="ID" style="padding-bottom: 10px;"></p>
+              <p id="CompanyID"></p>
+              <p id="Title"></p>
+              <p id="Description"></p>
+              <p id="JobOfferDate"></p>
+              <p id="NumberOfApplicants"></p>
+              <div class="button mt-2 d-flex  align-items-center" style="margin-right: 5%;">
+                <button id="Editbtn1" class="btn btn-sm btn-outline-primary w-100">Update Info</button> 
+                <button id="deletebtnInView1" class="btn btn-sm btn-primary w-100 ml-2">Delete Job</button> 
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
     </div>
 </body>
 

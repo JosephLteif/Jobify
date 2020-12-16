@@ -30,7 +30,7 @@ a:not([href]):not([tabindex]) {
   width: 200px;
   overflow-x: hidden;
   overflow-y: hidden;
-  background-color: #2b63ff;
+  background-color: #ff0157;
   position: absolute;
   height: 100%;
   overflow: auto;
@@ -55,13 +55,13 @@ a:not([href]):not([tabindex]) {
 
 /* Active/current link */
 .sidebar a.active {
-  background-color: #5f8aff;
+  background-color: #910030;
   color: white;
 }
 
 /* Links on mouse-over */
-.sidebar a:hover:not(.active) {
-  background-color: #5f8aff;
+.sidebar a:hover:not(.active),.sidebar a.active:hover {
+  background-color: #910030;
   color: white;
   cursor: pointer;
 }
@@ -96,15 +96,6 @@ a:not([href]):not([tabindex]) {
   position: absolute;
   top: 8px;
   right: 0;
-}
-
-.tractive {
-  background-color: #f2f2f2;
-}
-
-.table tbody tr:hover {
-  background-color: #f2f2f2;
-  cursor: pointer;
 }
 
 .card {
@@ -146,7 +137,7 @@ a:not([href]):not([tabindex]) {
 }
 
 /* The Modal (background) */
-.modal {
+.modal, .modal1 {
   visibility: hidden; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -167,6 +158,13 @@ a:not([href]):not([tabindex]) {
   margin: auto;
   border: 1px solid #888;
   width: 80%;
+}
+
+.modal-content1{
+  background-color: #fefefe;
+  margin: auto;
+  border: 1px solid #888;
+  width: 45%;
 }
 
 #userInfo p + p {
@@ -191,7 +189,25 @@ a:not([href]):not([tabindex]) {
   cursor: pointer;
 }
 
-.viewPanel {
+/* The Close Button */
+.close1 {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  width: 28px;
+  margin-left: 43%;
+  position: absolute;
+}
+
+.close1:hover,
+.close1:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.viewPanel,.viewPanel2 {
   display: flex;
   min-width: 800px;
 }
@@ -201,6 +217,34 @@ a:not([href]):not([tabindex]) {
   width: 50%;
 }
 
+#userInfo{
+  margin: 6%; 
+  width: 50%; 
+  height: 100%; 
+  float: right;
+}
+
+#Viewbtn{
+  color: #ff0157;
+  border-color: #ff0157;
+}
+#Viewbtn:hover, #Viewbtn:active{
+  background-color: #ff0157;
+  color: #fefefe;
+}
+#deletebtnInView, #deletebtn{
+  background-color: #ff0157;
+  border-color: #ff0157;
+}
+#Editbtn{
+  border-color: #ff0157;
+  color: #ff0157;
+}
+#Editbtn:hover, #Editbtn:active{
+  background-color: #ff0157;
+  color: #fefefe;
+}
+
 @media screen and (max-width: 1300px) {
   .col-4 {
     display: contents !important;
@@ -208,17 +252,13 @@ a:not([href]):not([tabindex]) {
 }
 
 @media screen and (max-width: 1000px) {
-  .viewPanel {
+  .viewPanel{
     display: contents;
     width: 50%;
-  }
-  .modal-content {
-    min-width: 269px;
   }
   #userImg {
     height: 100%;
     width: 100%;
-    min-width: 269px;
   }
 }
 
