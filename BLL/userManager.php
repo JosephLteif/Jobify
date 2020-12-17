@@ -65,3 +65,13 @@ function VerifyEmail($email)
 {
     return CheckAccountExist($email);
 }
+
+function GetUserChartData()
+{
+    return GetSeekerChartData();
+}
+
+function GetJobChartData()
+{
+    return GetOfferChartData();
+}

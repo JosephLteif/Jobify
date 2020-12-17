@@ -47,3 +47,28 @@ function DeleteJobByIDRepo($ID){
         return false;
     }
 }
+
+function GetOfferChartData()
+{
+    try {
+        $itemsarr = array();
+        $link = new\ PDO( 'mysql:host=localhost;dbname= jobify;charset=utf8mb4',
+          'root',
+          '',
+          array( \PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, \PDO::ATTR_PERSISTENT => false )
+        );
+      
+        $handle = $link->prepare( 'select count(user_userID) as applications, job_offer.jobOffer_ID as ID from job_offer inner join job_offer_has_user on jobOffer_ID = job_offer_has_user.job_offer_jobOffer_ID group by job_offer_has_user.job_offer_jobOffer_ID ;' );
+        $handle->execute();
+        $result = $handle->fetchAll( \PDO::FETCH_OBJ );
+      
+        foreach ( $result as $row ) {
+          array_push( $itemsarr, array( "x" => $row->ID, "y" => $row->applications ) );
+        }
+        $link = null;
+      } catch ( \PDOException $ex ) {
+        print( $ex->getMessage() );
+      }
+      
+      echo json_encode( $itemsarr, JSON_NUMERIC_CHECK );
+}

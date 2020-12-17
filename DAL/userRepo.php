@@ -175,10 +175,10 @@ function DeleteUserByIDRepo($ID)
 
     $query = "delete from password_reset where email = (select email from user where userID = '$ID');";
     mysqli_query($conn, $query);
-
     $query = "delete from user_follow_user where user_userID = '$ID' or user_userID1 = '$ID'";
     mysqli_query($conn, $query);
-
+    $query = "delete from job_offer_has_user where user_userID = '$ID';";
+    mysqli_query($conn, $query);
     $query = "Delete FROM user where userID = '$ID';";
     if (mysqli_query($conn, $query)) { // user found
         return true;
@@ -186,4 +186,29 @@ function DeleteUserByIDRepo($ID)
         CloseConn($conn);
         return false;
     }
+}
+
+function GetSeekerChartData()
+{
+    try {
+        $items = array();
+        $link = new\ PDO( 'mysql:host=localhost;dbname= jobify;charset=utf8mb4',
+          'root',
+          '',
+          array( \PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, \PDO::ATTR_PERSISTENT => false )
+        );
+      
+        $handle = $link->prepare( 'select count(user_userID) as applications, user.userID as ID from user inner join job_offer_has_user on userID = job_offer_has_user.user_userID group by user_userID ;' );
+        $handle->execute();
+        $result = $handle->fetchAll( \PDO::FETCH_OBJ );
+      
+        foreach ( $result as $row ) {
+          array_push( $items, array( "x" => $row->ID, "y" => $row->applications ) );
+        }
+        $link = null;
+      } catch ( \PDOException $ex ) {
+        print( $ex->getMessage() );
+      }
+      
+      echo json_encode( $items, JSON_NUMERIC_CHECK );
 }

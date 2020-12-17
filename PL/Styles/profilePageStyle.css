@@ -55,13 +55,13 @@ a:not([href]):not([tabindex]) {
 
 /* Active/current link */
 .sidebar a.active {
-  background-color: #910030;
+  background-color: #d10046;
   color: white;
 }
 
 /* Links on mouse-over */
 .sidebar a:hover:not(.active),.sidebar a.active:hover {
-  background-color: #910030;
+  background-color: #d10046;
   color: white;
   cursor: pointer;
 }
@@ -158,6 +158,7 @@ a:not([href]):not([tabindex]) {
   margin: auto;
   border: 1px solid #888;
   width: 80%;
+  min-width: 400px;
 }
 
 .modal-content1{
@@ -224,25 +225,34 @@ a:not([href]):not([tabindex]) {
   float: right;
 }
 
-#Viewbtn{
+#Viewbtn, #Viewbtn2{
   color: #ff0157;
   border-color: #ff0157;
 }
-#Viewbtn:hover, #Viewbtn:active{
+#Viewbtn:hover, #Viewbtn:active, #Viewbtn2:hover, #Viewbtn2:active{
   background-color: #ff0157;
   color: #fefefe;
 }
-#deletebtnInView, #deletebtn{
+#deletebtnInView, #deletebtn, #deletebtn2, #deletebtnInView1{
   background-color: #ff0157;
   border-color: #ff0157;
 }
-#Editbtn{
+#Editbtn, #Editbtn1{
   border-color: #ff0157;
   color: #ff0157;
 }
-#Editbtn:hover, #Editbtn:active{
+#Editbtn:hover, #Editbtn:active, #Editbtn1:hover, #Editbtn1:active{
   background-color: #ff0157;
   color: #fefefe;
+}
+#jobbottonbar{
+  display: flex;
+}
+#jobbottonbar button{
+  width: 100%;
+}
+.viewPanel2{
+  min-width: 400px;
 }
 
 @media screen and (max-width: 1300px) {
@@ -259,6 +269,16 @@ a:not([href]):not([tabindex]) {
   #userImg {
     height: 100%;
     width: 100%;
+  }
+  #jobbottonbar{
+    display: block;
+  }
+  #jobbottonbar button{
+    width: 50%;
+  }
+  #Editbtn1{
+    margin-bottom: 10px;
+    margin-right: 5px;
   }
 }
 

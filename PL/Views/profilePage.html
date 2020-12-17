@@ -10,11 +10,11 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <link rel="stylesheet" href="../Styles/profilePageStyle.css">
   <script src="../Scripts/profilePageScript.js"></script>
+  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
   <title>Profile Page</title>
 </head>
 
 <body>
-
   <!-- The sidebar -->
   <div class="sidebar">
     <img src="../Assets/expert2.jpg" alt="../Assets/default-PP.jpg" style="margin-left: 40px;">
@@ -29,14 +29,10 @@
     <img id="hidebtn" src="../Assets/icons8-arrow-64.png" alt=""
       style="position: absolute; width: 24px; margin-left: -40px;">
     <div id="HomePage">
-      <p>khjbadfskjlbnaklvbiuzxcvbkzjbviufdkbdifuv</p>
-      <p>khjbadfskjlbnaklvbiuzxcvbkzjbviufdkbdifuv</p>
-      <p>khjbadfskjlbnaklvbiuzxcvbkzjbviufdkbdifuv</p>
-      <p>khjbadfskjlbnaklvbiuzxcvbkzjbviufdkbdifuv</p>
-      <p>khjbadfskjlbnaklvbiuzxcvbkzjbviufdkbdifuv</p>
-      <p>khjbadfskjlbnaklvbiuzxcvbkzjbviufdkbdifuv</p>
-      <p>khjbadfskjlbnaklvbiuzxcvbkzjbviufdkbdifuv</p>
-      <p>khjbadfskjlbnaklvbiuzxcvbkzjbviufdkbdifuv</p>
+      <div class="charts" style="display: block;">
+        <div id="chartContainer1" style="position: absolute; margin-left: 50%"></div>
+        <div id="chartContainer2" style="position: absolute; margin-left: 10%"></div>
+      </div>
     </div>
     <div id="JobSeekersPage">
       <span style="color: red;" class="throw_error text-center"></span>
@@ -65,7 +61,6 @@
               <p id="Followings"></p>
               <div class="button mt-2 d-flex  align-items-center" style="margin-right: 5%;">
                 <button id="Editbtn" class="btn btn-sm btn-outline-primary w-100">Update Info</button> 
-                <button id="deletebtnInView" class="btn btn-sm btn-primary w-100 ml-2">Delete User</button> 
               </div>
             </div>
 
@@ -98,9 +93,8 @@
               <p id="Description"></p>
               <p id="JobOfferDate"></p>
               <p id="NumberOfApplicants"></p>
-              <div class="button mt-2 d-flex  align-items-center" style="margin-right: 5%;">
-                <button id="Editbtn1" class="btn btn-sm btn-outline-primary w-100">Update Info</button> 
-                <button id="deletebtnInView1" class="btn btn-sm btn-primary w-100 ml-2">Delete Job</button> 
+              <div class="button align-items-center" style="margin-right: 5%;" id="jobbottonbar">
+                <button id="Editbtn1" class="btn btn-sm btn-outline-primary">Update Info</button> 
               </div>
             </div>
 

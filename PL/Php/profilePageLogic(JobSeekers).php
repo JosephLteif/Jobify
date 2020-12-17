@@ -19,5 +19,9 @@ if (isset($_POST['test'])) {
         echo GetUsers();
     } else if ($_POST['test'] == 'Job') {
         echo GetJobs();
+    } else if($_POST['test'] == 'UserChart'){
+        echo GetUserChartData();
+    } else if($_POST['test'] == 'JobChart'){
+        echo GetJobChartData();
     }
 }
