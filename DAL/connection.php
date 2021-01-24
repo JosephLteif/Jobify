@@ -1,10 +1,6 @@
 <?php
 
 function OpenCon () {
-    // $dbhost="sql7.freemysqlhosting.net:3306";
-    // $dbuser="sql7375263";
-    // $dbpass="Tsg9h7CIPh";
-    // $db="sql7375263";
     $dbhost="127.0.0.1:3306";
     $dbuser="root";
     $dbpass="";
